@@ -2,232 +2,507 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Willow & Breath Yoga Studio — 6-Week Beginner Course</title>
 <meta name="description" content="Join our 6-week beginner yoga course at Willow & Breath Yoga Studio. Tuesdays and Thursdays at 7pm. $149 for the full course.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --sage:#7c9473;
-    --sage-dark:#5c7254;
-    --cream:#faf7f2;
-    --charcoal:#2e2b26;
-    --gold:#c9a24b;
+    --navy:#12172b;
+    --navy-2:#1b2340;
+    --blue:#4a5fe0;
+    --blue-dark:#3949c7;
+    --cream:#faf8f4;
+    --ink:#1c1f2b;
+    --muted:#7d8296;
+    --line:#e7e5df;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
   body{
-    font-family:'Georgia', 'Times New Roman', serif;
+    font-family:'Poppins', sans-serif;
+    color:var(--ink);
     background:var(--cream);
-    color:var(--charcoal);
-    line-height:1.6;
+    line-height:1.7;
+    overflow-x:hidden;
   }
-  .container{
-    max-width:800px;
-    margin:0 auto;
-    padding:0 24px;
-  }
-  header{
-    background:var(--sage);
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  h1,h2,h3{font-family:'Playfair Display', serif;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .btn{
+    display:inline-block;
+    background:var(--blue);
     color:#fff;
-    padding:56px 0 48px;
-    text-align:center;
-  }
-  header h1{
-    font-size:2.4rem;
-    font-weight:400;
-    letter-spacing:1px;
-  }
-  header p{
-    margin-top:12px;
-    font-size:1.1rem;
-    font-style:italic;
-    opacity:0.95;
-  }
-  nav{
-    background:var(--sage-dark);
-    text-align:center;
-    padding:12px 0;
-  }
-  nav a{
-    color:#fff;
-    text-decoration:none;
-    margin:0 16px;
-    font-size:0.95rem;
-    letter-spacing:0.5px;
-  }
-  nav a:hover{text-decoration:underline;}
-  section{
-    padding:48px 0;
-    border-bottom:1px solid #e4ddd0;
-  }
-  section:last-of-type{border-bottom:none;}
-  h2{
-    font-size:1.7rem;
-    font-weight:400;
-    margin-bottom:20px;
-    color:var(--sage-dark);
-    text-align:center;
-  }
-  .description p{
-    font-size:1.05rem;
-    max-width:640px;
-    margin:0 auto 16px;
-  }
-  .schedule-box, .price-box{
-    background:#fff;
-    border:1px solid #e4ddd0;
-    border-radius:8px;
-    padding:28px;
-    max-width:480px;
-    margin:0 auto;
-    text-align:center;
-  }
-  .schedule-box .detail, .price-box .detail{
-    font-size:1.3rem;
-    margin:10px 0;
-    color:var(--sage-dark);
-    font-weight:bold;
-  }
-  .price-box .amount{
-    font-size:2.4rem;
-    color:var(--gold);
-    font-weight:bold;
-    margin:12px 0;
-  }
-  form{
-    max-width:480px;
-    margin:0 auto;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-  }
-  label{
-    font-size:0.95rem;
-    font-weight:bold;
-    color:var(--sage-dark);
-  }
-  input, textarea{
-    padding:12px;
-    border:1px solid #cfc6b4;
+    padding:15px 34px;
     border-radius:6px;
-    font-family:inherit;
-    font-size:1rem;
-    width:100%;
-  }
-  textarea{min-height:120px;resize:vertical;}
-  button{
-    background:var(--sage);
-    color:#fff;
+    font-weight:600;
+    font-size:0.95rem;
+    letter-spacing:0.3px;
     border:none;
-    padding:14px;
-    font-size:1.05rem;
-    border-radius:6px;
     cursor:pointer;
-    font-family:inherit;
-    transition:background 0.2s;
+    transition:background 0.25s, transform 0.25s;
   }
-  button:hover{background:var(--sage-dark);}
-  .form-note{
-    text-align:center;
+  .btn:hover{background:var(--blue-dark); transform:translateY(-2px);}
+  .btn-outline{
+    display:inline-block;
+    border:1.5px solid #fff;
+    color:#fff;
+    padding:13px 32px;
+    border-radius:6px;
+    font-weight:600;
+    font-size:0.95rem;
+  }
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:0.75rem;
+    font-weight:600;
+    color:var(--blue);
+  }
+
+  /* ===== NAV ===== */
+  header{
+    background:var(--navy);
+    position:sticky; top:0; z-index:50;
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 0;
+  }
+  .logo{
+    color:#fff; font-family:'Playfair Display', serif;
+    font-size:1.5rem; font-weight:700; letter-spacing:0.5px;
+  }
+  .logo span{color:var(--blue);}
+  .nav-links{display:flex; gap:36px; list-style:none;}
+  .nav-links a{color:#cfd2e6; font-size:0.92rem; font-weight:500; transition:color 0.2s;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{display:flex; align-items:center; gap:18px;}
+
+  /* ===== HERO ===== */
+  .hero{
+    background:var(--navy);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    padding:70px 0 100px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr 460px;
+    gap:40px;
+    align-items:center;
+  }
+  .hero-eyebrow{color:var(--blue); text-transform:uppercase; letter-spacing:3px; font-size:0.8rem; font-weight:600; margin-bottom:18px;}
+  .hero h1{
+    font-size:3.6rem;
+    line-height:1.08;
+    font-weight:800;
+    margin-bottom:22px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--blue);
+  }
+  .hero p{
+    color:#b7bbd4;
+    font-size:1.05rem;
+    max-width:460px;
+    margin-bottom:34px;
+  }
+  .hero-cta{display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
+  .hero-meta{display:flex; gap:34px; margin-top:46px; flex-wrap:wrap;}
+  .hero-meta div strong{display:block; font-size:1.6rem; font-family:'Playfair Display',serif; color:#fff;}
+  .hero-meta div span{font-size:0.8rem; color:#9096b3;}
+
+  .hero-photo-wrap{position:relative;}
+  .hero-photo{
+    width:100%;
+    aspect-ratio:1/1.05;
+    object-fit:cover;
+    border-radius:50% 50% 44% 44% / 55% 55% 45% 45%;
+    border:6px solid rgba(255,255,255,0.08);
+  }
+  .hero-badge{
+    position:absolute;
+    bottom:14px; left:-30px;
+    background:#fff;
+    color:var(--navy);
+    padding:16px 20px;
+    border-radius:14px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.35);
     font-size:0.85rem;
-    color:#6b6456;
-    margin-top:8px;
+    font-weight:600;
+    max-width:190px;
   }
-  footer{
-    text-align:center;
-    padding:32px 0;
-    font-size:0.9rem;
-    color:#6b6456;
+  .hero-badge strong{display:block; color:var(--blue); font-family:'Playfair Display',serif; font-size:1.3rem;}
+
+  /* ===== BANNER STRIP ===== */
+  .banner{
+    background:var(--blue);
+    color:#fff;
   }
+  .banner-inner{
+    display:flex; align-items:center; justify-content:space-between; gap:30px;
+    padding:34px 0; flex-wrap:wrap;
+  }
+  .banner h3{font-size:1.4rem; font-weight:700; max-width:360px;}
+  .banner p{color:#dfe3ff; font-size:0.92rem; max-width:480px;}
+  .banner-photo{
+    width:70px; height:70px; border-radius:50%; object-fit:cover;
+    border:3px solid rgba(255,255,255,0.5);
+  }
+
+  /* ===== SECTION shared ===== */
+  section{padding:96px 0;}
+  .section-head{max-width:560px; margin-bottom:50px;}
+  .section-head h2{font-size:2.4rem; margin:14px 0 16px; line-height:1.2;}
+  .section-head p{color:var(--muted);}
+
+  /* ===== ABOUT / COURSE ===== */
+  .about-grid{
+    display:grid;
+    grid-template-columns:440px 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .about-photo-stack{position:relative;}
+  .about-photo-main{
+    width:100%; border-radius:18px; aspect-ratio:4/5; object-fit:cover;
+  }
+  .about-photo-float{
+    position:absolute; bottom:-36px; right:-36px;
+    width:190px; height:190px; border-radius:50%;
+    object-fit:cover; border:6px solid var(--cream);
+    box-shadow:0 18px 40px rgba(20,25,60,0.18);
+  }
+  .about-copy p{color:var(--muted); margin-bottom:16px; max-width:520px;}
+  .about-points{list-style:none; margin-top:26px; display:grid; gap:14px;}
+  .about-points li{display:flex; gap:12px; align-items:flex-start; font-size:0.95rem;}
+  .about-points .dot{
+    width:22px;height:22px;border-radius:50%;background:var(--blue);
+    color:#fff; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    font-size:0.7rem; margin-top:2px;
+  }
+
+  /* ===== SCHEDULE + PRICE ===== */
+  .dark-section{background:var(--navy); color:#fff;}
+  .dark-section .section-head p{color:#a9adc7;}
+  .cards{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:28px;
+  }
+  .card{
+    background:var(--navy-2);
+    border-radius:16px;
+    padding:38px;
+    border:1px solid rgba(255,255,255,0.06);
+  }
+  .card .icon{
+    width:52px; height:52px; border-radius:14px; background:var(--blue);
+    display:flex; align-items:center; justify-content:center; font-size:1.4rem;
+    margin-bottom:22px;
+  }
+  .card h3{font-size:1.3rem; margin-bottom:10px; color:#fff;}
+  .card p{color:#a9adc7; font-size:0.92rem; margin-bottom:18px;}
+  .card .big{font-family:'Playfair Display',serif; font-size:2.6rem; color:var(--blue); font-weight:700;}
+  .card ul{list-style:none; margin-top:10px; display:grid; gap:8px;}
+  .card ul li{font-size:0.9rem; color:#cfd2e6; display:flex; gap:10px;}
+
+  /* ===== TESTIMONIAL / PRACTICE ===== */
+  .practice{
+    display:grid;
+    grid-template-columns:1fr 460px;
+    gap:60px;
+    align-items:center;
+  }
+  .practice-photo{
+    width:100%; border-radius:18px; aspect-ratio:4/5; object-fit:cover;
+  }
+  .quote{
+    font-family:'Playfair Display', serif;
+    font-size:1.5rem;
+    line-height:1.5;
+    margin:20px 0 26px;
+    color:var(--ink);
+  }
+  .who{display:flex; align-items:center; gap:14px;}
+  .who img{width:52px; height:52px; border-radius:50%; object-fit:cover;}
+  .who strong{display:block; font-size:0.95rem;}
+  .who span{font-size:0.8rem; color:var(--muted);}
+  .stars{color:var(--blue); letter-spacing:2px; margin-bottom:6px;}
+
+  /* ===== CONTACT ===== */
+  .contact-section{background:var(--navy-2); color:#fff;}
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;
+  }
+  .contact-grid .section-head p{color:#a9adc7;}
+  .contact-info{display:grid; gap:22px; margin-top:30px;}
+  .contact-info div{display:flex; gap:14px; align-items:flex-start;}
+  .contact-info .ic{
+    width:42px;height:42px;border-radius:10px;background:var(--blue);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-info strong{display:block; font-size:0.95rem;}
+  .contact-info span{font-size:0.85rem; color:#a9adc7;}
+
+  form{display:grid; gap:16px;}
+  label{font-size:0.8rem; font-weight:600; color:#cfd2e6; margin-bottom:6px; display:block;}
+  input, textarea{
+    width:100%; padding:14px 16px; border-radius:8px; border:1px solid rgba(255,255,255,0.14);
+    background:rgba(255,255,255,0.04); color:#fff; font-family:inherit; font-size:0.95rem;
+  }
+  input::placeholder, textarea::placeholder{color:#7d8296;}
+  textarea{min-height:120px; resize:vertical;}
+  .form-note{font-size:0.8rem; color:#8b8fac; margin-top:4px;}
   .success-msg{
-    display:none;
-    text-align:center;
-    color:var(--sage-dark);
-    font-weight:bold;
-    max-width:480px;
-    margin:16px auto 0;
+    display:none; background:rgba(74,95,224,0.15); border:1px solid var(--blue);
+    padding:16px; border-radius:10px; font-size:0.9rem; margin-top:10px;
   }
-  @media (max-width:600px){
-    header h1{font-size:1.8rem;}
-    header{padding:40px 0 32px;}
-    nav a{margin:0 8px;font-size:0.85rem;}
-    h2{font-size:1.4rem;}
-    section{padding:36px 0;}
-    .schedule-box, .price-box{padding:20px;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy); color:#a9adc7; padding-top:70px;}
+  .footer-grid{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px;
+    padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .footer-grid h4{color:#fff; font-size:0.95rem; margin-bottom:18px; font-weight:600;}
+  .footer-grid ul{list-style:none; display:grid; gap:10px;}
+  .footer-grid ul li a{font-size:0.88rem; color:#a9adc7;}
+  .footer-grid ul li a:hover{color:#fff;}
+  .footer-logo{color:#fff; font-family:'Playfair Display',serif; font-size:1.4rem; margin-bottom:14px;}
+  .footer-logo span{color:var(--blue);}
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:26px 0; font-size:0.82rem; flex-wrap:wrap; gap:10px;
+  }
+  .socials{display:flex; gap:14px;}
+  .socials a{
+    width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.15);
+    display:flex; align-items:center; justify-content:center; font-size:0.85rem;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:900px){
+    .hero-grid, .about-grid, .practice, .contact-grid{grid-template-columns:1fr;}
+    .hero-photo-wrap{order:-1; max-width:340px; margin:0 auto;}
+    .hero h1{font-size:2.5rem;}
+    .cards{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .nav-links{display:none;}
+    .about-photo-float{width:130px;height:130px; right:-10px; bottom:-24px;}
+    section{padding:64px 0;}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 20px;}
+    .hero h1{font-size:2rem;}
+    .footer-grid{grid-template-columns:1fr;}
+    .banner-inner{flex-direction:column; align-items:flex-start; text-align:left;}
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="container">
-    <h1>Willow &amp; Breath Yoga Studio</h1>
-    <p>Begin your practice. 6 weeks, twice a week, no experience needed.</p>
+  <div class="wrap nav">
+    <div class="logo">Willow <span>&</span> Breath</div>
+    <ul class="nav-links">
+      <li><a href="#about">The Course</a></li>
+      <li><a href="#schedule">Schedule &amp; Price</a></li>
+      <li><a href="#practice">Practice</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn">Enroll Now</a>
+    </div>
   </div>
 </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#schedule">Schedule</a>
-  <a href="#price">Price</a>
-  <a href="#contact">Contact</a>
-</nav>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-eyebrow">6-Week Beginner Course</div>
+      <h1>Begin Your <em>Yoga</em><br>Practice, Gently.</h1>
+      <p>A calm, supportive introduction to yoga for complete beginners — no experience, no flexibility, and no pressure required. Just six weeks, twice a week, to build strength and stillness.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Reserve Your Spot — $149</a>
+        <a href="#schedule" class="btn-outline">See Schedule</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>6</strong><span>Weeks of practice</span></div>
+        <div><strong>12</strong><span>Guided classes</span></div>
+        <div><strong>2×</strong><span>Tue &amp; Thu, 7pm</span></div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="https://images.pexels.com/photos/6725907/pexels-photo-6725907.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Man meditating peacefully in a seated yoga pose">
+      <div class="hero-badge"><strong>$149</strong>Full 6-week course, all materials included</div>
+    </div>
+  </div>
+</section>
+
+<div class="banner">
+  <div class="wrap banner-inner">
+    <img class="banner-photo" src="https://images.pexels.com/photos/9271181/pexels-photo-9271181.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Person practicing a calm seated yoga pose">
+    <h3>New to yoga? This class was built for you.</h3>
+    <p>Every session is led in a small group so you get personal attention and can move at your own pace — from your very first class.</p>
+    <a href="#contact" class="btn">Get Started</a>
+  </div>
+</div>
 
 <section id="about">
-  <div class="container description">
-    <h2>Our Beginner Course</h2>
-    <p>Our 6-week Beginner Yoga Course is designed for complete newcomers who want a calm, supportive introduction to the practice. Over six weeks, you'll build strength, flexibility, and breath awareness through slow, guided sequences — no prior experience or flexibility required. Each class is led in a small-group setting so you get personal attention and can move at your own pace.</p>
-    <p>By the end of the course, you'll have a solid foundation in basic postures, breathing techniques, and simple routines you can continue at home.</p>
-  </div>
-</section>
-
-<section id="schedule">
-  <div class="container">
-    <h2>Schedule</h2>
-    <div class="schedule-box">
-      <div class="detail">Tuesdays &amp; Thursdays</div>
-      <div class="detail">7:00 PM</div>
-      <p>6 consecutive weeks · 12 classes total</p>
+  <div class="wrap about-grid">
+    <div class="about-photo-stack">
+      <img class="about-photo-main" src="https://images.pexels.com/photos/9271158/pexels-photo-9271158.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Yogi practicing a seated forward bend pose">
+      <img class="about-photo-float" src="https://images.pexels.com/photos/6201863/pexels-photo-6201863.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Man practicing yoga on a rooftop at sunrise">
+    </div>
+    <div class="about-copy">
+      <div class="eyebrow">Our Beginner Course</div>
+      <h2>Six weeks to a calmer, <em>stronger</em> you.</h2>
+      <p>Our 6-week Beginner Yoga Course is designed for complete newcomers who want a calm, supportive introduction to the practice. Over six weeks, you'll build strength, flexibility, and breath awareness through slow, guided sequences.</p>
+      <p>By the end of the course, you'll have a solid foundation in basic postures, breathing techniques, and simple routines you can continue at home — for life.</p>
+      <ul class="about-points">
+        <li><span class="dot">✓</span> No experience or flexibility required</li>
+        <li><span class="dot">✓</span> Small-group setting with personal attention</li>
+        <li><span class="dot">✓</span> Mats and props provided — just bring yourself</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section id="price">
-  <div class="container">
-    <h2>Course Price</h2>
-    <div class="price-box">
-      <div class="amount">$149</div>
-      <p>Full 6-week course, all materials included</p>
+<section id="schedule" class="dark-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Schedule &amp; Pricing</div>
+      <h2>Everything you need to know before you join.</h2>
+      <p>One simple price, one simple schedule — no hidden fees, no long-term contract.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">📅</div>
+        <h3>Class Schedule</h3>
+        <p>Six weeks, two classes a week, at the same time every week so it's easy to build into your routine.</p>
+        <ul>
+          <li>🕖 Tuesdays — 7:00 PM</li>
+          <li>🕖 Thursdays — 7:00 PM</li>
+          <li>📍 12 classes total over 6 weeks</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">💳</div>
+        <h3>Course Price</h3>
+        <div class="big">$149</div>
+        <p>Full 6-week course, all materials included — mats, blocks, and straps provided in studio.</p>
+        <ul>
+          <li>✓ No hidden fees</li>
+          <li>✓ No long-term contract</li>
+          <li>✓ Beginner-friendly pacing</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="container">
-    <h2>Get In Touch</h2>
-    <form id="contactForm" action="https://formspree.io/f/xqevwnnl" method="POST">
-      <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+<section id="practice">
+  <div class="wrap practice">
+    <div>
+      <div class="stars">★★★★★</div>
+      <div class="eyebrow">From Our Students</div>
+      <p class="quote">"I'd never done yoga before and was nervous about keeping up. The pace was perfect, and by week three I actually looked forward to class every Tuesday."</p>
+      <div class="who">
+        <img src="https://images.pexels.com/photos/29841240/pexels-photo-29841240.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Portrait of a yoga student">
+        <div>
+          <strong>Sarah M.</strong>
+          <span>Beginner Course, Spring Session</span>
+        </div>
       </div>
-      <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+    </div>
+    <img class="practice-photo" src="https://images.pexels.com/photos/6201863/pexels-photo-6201863.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Person practicing yoga outdoors on a rooftop">
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Get In Touch</div>
+      <h2 style="font-size:2.2rem; margin:14px 0 16px;">Ready to start your <em style="color:var(--blue); font-style:italic;">practice</em>?</h2>
+      <p>Send us a message and we'll get back to you within 1–2 business days with everything you need to reserve your spot.</p>
+      <div class="contact-info">
+        <div>
+          <div class="ic">✉️</div>
+          <div><strong>Email</strong><span>hello@willowbreathyoga.com</span></div>
+        </div>
+        <div>
+          <div class="ic">🕖</div>
+          <div><strong>Class Times</strong><span>Tuesdays &amp; Thursdays, 7:00 PM</span></div>
+        </div>
+        <div>
+          <div class="ic">💳</div>
+          <div><strong>Price</strong><span>$149 for the full 6-week course</span></div>
+        </div>
       </div>
-      <div>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Tell us a bit about yourself or ask a question about the course." required></textarea>
-      </div>
-      <button type="submit">Send Message</button>
-      <p class="form-note">We'll reply within 1–2 business days. You can also email us directly at <strong>hello@willowbreathyoga.com</strong>.</p>
-    </form>
-    <p class="success-msg" id="successMsg">Thank you! Your message has been sent — we'll be in touch soon.</p>
+    </div>
+    <div>
+      <form id="contactForm" action="https://formspree.io/f/xqevwnnl" method="POST">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us a bit about yourself or ask a question about the course." required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+        <p class="form-note">We'll reply within 1–2 business days.</p>
+        <p class="success-msg" id="successMsg">Thank you! Your message has been sent — we'll be in touch soon.</p>
+      </form>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    &copy; 2026 Willow &amp; Breath Yoga Studio. All rights reserved.
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Willow <span>&</span> Breath</div>
+        <p style="max-width:280px; font-size:0.88rem;">A calm, supportive studio for beginners. Six weeks is all it takes to start a practice that lasts a lifetime.</p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#about">The Course</a></li>
+          <li><a href="#practice">Student Stories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Course Info</h4>
+        <ul>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#schedule">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@willowbreathyoga.com">hello@willowbreathyoga.com</a></li>
+          <li><a href="#contact">Enrollment Form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Willow &amp; Breath Yoga Studio. All rights reserved.</span>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -244,7 +519,6 @@
     }).then(response => {
       if (response.ok) {
         form.reset();
-        form.style.display = 'none';
         successMsg.style.display = 'block';
       } else {
         alert('Something went wrong. Please try emailing us directly at hello@willowbreathyoga.com.');
@@ -257,4 +531,3 @@
 
 </body>
 </html>
-
